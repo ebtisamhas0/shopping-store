@@ -1,0 +1,14 @@
+body{
+    background-color: #000;
+    height: 450px;}
+    .card{
+        border: 1px solid black;
+    }
+        .product{
+            height: 450px;
+            background-color: #eee}
+            .brand{font-size: 13px}
+            .act-price{color:rgb(47, 42, 157);font-weight: 900}
+            .about{font-size: 14px}
+            .color{margin-bottom:10px}
+            .cart i{margin-right: 10px}

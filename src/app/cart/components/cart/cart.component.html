@@ -1,0 +1,49 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<br>
+<div class="col"><h4><b>Shopping Cart</b></h4></div>
+
+<div class="card" *ngFor="let item of cartProducts; let index = index;">
+   <div class="row">
+      <div class="col-md-8 cart" >
+         <div class="title">
+            <div class="row">
+              <div class="col align-self-center text-right text-muted">{{cartProducts.length}} items</div>
+            </div>
+            </div>    
+            <div class="row border-top border-bottom">
+                <div class="row main align-items-center">
+                    <div class="col-2"><img class="img-fluid" src={{item.item.image}}></div>
+                    <div class="col">
+                        <div class="row text-muted">{{item.item.title}}</div>
+                    </div>
+                    <div class="col d-flex">
+                        <button class="btn "id="add" (click)="addAmount(index)">+</button>
+                        <input class="form-control" type="number" [(ngModel)]="item.quantity" min="1">
+                        <button class="btn "id="add" (click)="minsAmount(index)">-</button>
+                    </div>
+                    <div class="col d-flex">R.S {{item.item.price * item.quantity}} <span class="close">&#10005;</span>
+                
+                   <div>
+                    <button  (click)="delete(index)" id="del">
+                    <mat-icon> delete_outline</mat-icon>
+                    </button>
+            </div>
+                </div>
+            </div>
+            </div>
+        </div>
+   </div>
+</div>
+<div class="col-md-8 foter">
+  <div class="row border-top border-bottom">
+    <div class="row main d-flex align-items-center">
+                <div class="col">TOTAL PRICE</div>
+                <div class="col text-right">R.S  {{total}}</div>
+       </div>
+    </div>
+     <div class="form-margin">
+        <app-create-form (addCart)="addCart($event)"></app-create-form>
+</div>
+</div>
+          
+
